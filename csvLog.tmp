@@ -1,0 +1,32 @@
+column1,column2,column3
+DEFAULT
+184,6
+HikariPool-1
+HikariPool-1,com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I
+HikariPool-1
+default
+5.3.9.Final
+
+5.0.4.Final
+org.hibernate.dialect.MySQL5Dialect
+3
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@2bf2180
+
+1
+saveBulkMobileUsingPOST_1
+Started SpringBootUserRegistrationApplication in 25.027 seconds (JVM running for 35.103)
+HikariPool-1
+HikariPool-1
+DEFAULT
+33,6
+HikariPool-2
+HikariPool-2,com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I
+HikariPool-2
+default
+org.hibernate.dialect.MySQL5Dialect
+3
+org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@2bf2180
+
+1
+saveBulkMobileUsingPOST_1
+Started SpringBootUserRegistrationApplication in 4.293 seconds (JVM running for 230.667)

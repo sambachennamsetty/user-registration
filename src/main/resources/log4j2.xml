@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" monitorInterval="30">
+	<Properties>
+		<Property name="LOG_PATTERN">
+			<PatternLayout
+				pattern="%highlight{%d [%t] %-5level: %m %n%throwable}"
+				disableAnsi="false" />
+		</Property>
+		<Property name="csvLog.fileName">csvLog</Property>
+		<Property name="file-header">column1,column2,column3</Property>
+	</Properties>
+	<Appenders>
+		<Console name="ConsoleAppender" target="SYSTEM_OUT"
+			follow="true">
+			<PatternLayout
+				pattern="%highlight{%d [%t] %-5level: %m %n%throwable}"
+				disableAnsi="false" />
+		</Console>
+		<RollingFile name="csvFile"
+			fileName="${csvLog.fileName}.tmp"
+			filePattern="${csvLog.filename}-%d{MM-dd-yyyy}-%i.csv">
+			<CsvParameterLayout delimiter=","
+				header="${file-header}\n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+				<SizeBasedTriggeringPolicy size="2 KB" />
+			</Policies>
+			<DefaultRolloverStrategy max="200" />
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+		<Root level="info" includeLocation="true">
+			<AppenderRef ref="ConsoleAppender" />
+			<AppenderRef ref="csvFile" level="debug" />
+		</Root>
+	</Loggers>
+</Configuration>
